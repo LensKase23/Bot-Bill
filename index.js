@@ -219,7 +219,7 @@ axios.get('https://api.banghasan.com/quran/format/json/acak').then((res) => {
 })
 }
 else if (text == 'assalamualaikum'){
-conn.sendMessage(id, 'Waalaikumsalam, ada yang bisa saya bantu? kalo bingung ketik #help ya say..' ,MessageType.text);
+conn.sendMessage(id, '3aalaikumsalam, ada yang bisa saya bantu? kalo bingung ketik #help ya say..' ,MessageType.text);
 }
 else if (text == 'salam'){
 conn.sendMessage(id, 'Waalaikumsalam, ada yang bisa saya bantu? kalo bingung ketik #help ya say..' ,MessageType.text);
@@ -539,7 +539,9 @@ conn.sendMessage(id, 'kirim #ptl cewek/cowok\n\nContoh: #ptl cewek' ,MessageType
    {
       const url = text.replace(/#yt/, "");
       const exec = require('child_process').exec;
+
       var videoid = url.match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/);
+
       const ytdl = require("ytdl-core")
       if (videoid != null)
       {
@@ -557,7 +559,9 @@ conn.sendMessage(id, 'kirim #ptl cewek/cowok\n\nContoh: #ptl cewek' ,MessageType
          }
          else
          {
+
             console.log(info.length_seconds)
+
             function os_func()
             {
                this.execCommand = function (cmd)
@@ -577,6 +581,7 @@ conn.sendMessage(id, 'kirim #ptl cewek/cowok\n\nContoh: #ptl cewek' ,MessageType
                }
             }
             var os = new os_func();
+
             os.execCommand('ytdl ' + url + ' -q highest -o mp4/' + videoid[1] + '.mp4').then(res =>
             {
 		const buffer = fs.readFileSync("mp4/"+ videoid[1] +".mp4")
@@ -585,13 +590,16 @@ conn.sendMessage(id, 'kirim #ptl cewek/cowok\n\nContoh: #ptl cewek' ,MessageType
             {
                console.log("os >>>", err);
             })
+
          }
       });
+
    }*/
 
 
    /*if (text.includes("#nulis"))
    {
+
       const
       {
          spawn
@@ -620,10 +628,13 @@ conn.sendMessage(id, 'kirim #ptl cewek/cowok\n\nContoh: #ptl cewek' ,MessageType
          .on("exit", () =>
          {
             const buffer = fs.readFileSync("assets/result.jpg") // can send mp3, mp4, & ogg -- but for mp3 files the mimetype must be set to ogg
+
             conn.sendMessage(id, buffer, MessageType.image)
             console.log("done")
          })
    }
+
+
    if (text.includes("#quotes"))
    {
       var url = 'https://jagokata.com/kata-bijak/acak.html'
@@ -633,6 +644,7 @@ conn.sendMessage(id, 'kirim #ptl cewek/cowok\n\nContoh: #ptl cewek' ,MessageType
             let $ = cheerio.load(result.data);
             var author = $('a[class="auteurfbnaam"]').contents().first().text();
             var kata = $('q[class="fbquote"]').contents().first().text();
+
             conn.sendMessage(
                id,
                `
@@ -642,6 +654,7 @@ conn.sendMessage(id, 'kirim #ptl cewek/cowok\n\nContoh: #ptl cewek' ,MessageType
 	*~${author}*
          `, MessageType.text
             );
+
          });
    }*/
 

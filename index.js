@@ -126,15 +126,9 @@ axios.get(`https://mhankbarbar.herokuapp.com/nulis?text=${teks}&apiKey=zFuV88pxc
 
 if (text.includes("#ytmp3")){
 const teks = text.replace(/#ytmp3 /, "")
- $url = 'https://mhankbarbar.herokuapp.com/api/yta?url=${teks}=zFuV88pxcIiCWuYlwg57';
-   $curl = curl_init($url);
-   curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-   curl_setopt($curl, CURLOPT_HTTPHEADER, [
-    'Content-Type: application/json'
-   ]);
-   $response = curl_exec($curl);
-   curl_close($curl);
-   echo $response . PHP_EOL; // appear response
+axios.get(`https://mhankbarbar.herokuapp.com/api/yta?url=${teks}&apiKey=zFuV88pxcIiCWuYlwg57`).then((res) => {
+    let hasil = `Download sendiri melalui link dibawah ya, takut servernya down xixi..\n\nSize: ${res.data.filesize}\n\nLink: ${res.data.result}`;
+    conn.sendMessage(id, hasil ,MessageType.text);
 })
 }
 

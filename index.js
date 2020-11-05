@@ -13,7 +13,8 @@ const donate = require("./lib/donate.js");
 const info = require("./lib/infoBot.js");
 //
 const BotName = 'BotBill'; // Nama Bot Whatsapp
-const instagramlu = 'https://instagram.com/bintang_nur_pradana'; // Nama Instagramlu cok
+const youtubelu = 'https://www.youtube.com/channel/UCNWQpPU-c_BaaKvxB6RZ6fQ'; // Nama Youtubelu cok
+const instagramlu = 'https://www.instagram.com/lenskase23/'; //Nama Instagramlu cok
 const whatsapplu = '0895-3915-98529'; // Nomor whatsapplu cok
 const kapanbotaktif = '24 Jam'; // Kapan bot lu aktif
 const grupch1 = 'https://chat.whatsapp.com/FsAlnxqz6y2BhCQi5ayCLG'; // OFFICIAL GRUP LU 1

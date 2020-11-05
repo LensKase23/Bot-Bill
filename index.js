@@ -264,8 +264,8 @@ conn.sendMessage(group.gid, "hello everyone", MessageType.extendedText) // say h
                 )
             }
             break
-	    case '!stickernobg':
-        case '!stikernobg':
+	    case '!sticker':
+        case '!stiker':
 	    if (isMedia) {
                 try {
                     var mediaData = await decryptMedia(message, uaOverride)

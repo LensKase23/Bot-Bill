@@ -10,7 +10,7 @@ const axios = require("axios");
 const imageToBase64 = require('image-to-base64');
 const menu = require("./lib/menu.js");
 const donate = require("./lib/donate.js");
-const info = require("./lib/info.js");
+const info = require("./lib/infoBot.js");
 //
 const BotName = 'BotBill'; // Nama Bot Whatsapp
 const instagramlu = 'https://instagram.com/bintang_nur_pradana'; // Nama Instagramlu cok
@@ -29,7 +29,7 @@ const { spawn, exec } = require('child_process')
 const nhentai = require('nhentai-js')
 const { API } = require('nhentai-api')
 const { liriklagu, quotemaker, randomNimek, fb, sleep, jadwalTv, ss } = require('./lib/functions')
-const { help, snk, info, donate, readme, listChannel } = require('./lib/help')
+const { help, snk, info, donate, readme, listChannel } = require('./lib/menu.js')
 const { stdout } = require('process')
 const nsfw_ = JSON.parse(fs.readFileSync('./lib/NSFW.json'))
 const welkom = JSON.parse(fs.readFileSync('./lib/welcome.json'))

@@ -200,6 +200,21 @@ conn.on('message-new', async(m) =>
 
 
 // Groups
+if (text.includes("!buatgrup"))
+   {
+var nama = text.split("!buatgrup")[1].split("-nomor")[0];
+var nom = text.split("-nomor")[1];
+var numArray = nom.split(",");
+for ( var i = 0; i < numArray.length; i++ ) {
+    numArray[i] = numArray[i] +"@s.whatsapp.net";
+}
+var str = numArray.join("");
+console.log(str)
+const group = await conn.groupCreate (nama, str)
+console.log ("created group with id: " + group.gid)
+conn.sendMessage(group.gid, "hello everyone", MessageType.extendedText) // say hello to everyone on the group
+
+}
 
         const isUrl = new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&/=]*)/gi)
         if (!isGroupMsg && command.startsWith('!')) console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;32mEXEC\x1b[1;37m]', time, color(msgs(command)), 'from', color(pushname))

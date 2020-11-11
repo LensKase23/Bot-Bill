@@ -179,6 +179,9 @@ module.exports = msgHandler = async (client, message) => {
                 await client.sendFileFromUrl(from, json.result, 'Nulis.jpg', 'Nih anjim', id)
             }).catch(e => client.reply(from, "Error: "+ e));
             break
+		if (text.includes("!say")){
+	  const teks = text.replace(/!say /, "")
+	conn.sendMessage(id, teks, MessageType.text)
         case '!ytmp3':
             if (args.length === 1) return client.reply(from, 'Kirim perintah *!ytmp3 [linkYt]*, untuk contoh silahkan kirim perintah *!readme*')
             let isLinks = args[1].match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/)
